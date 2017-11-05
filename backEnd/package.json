@@ -1,0 +1,20 @@
+{
+  "name": "cabelo",
+  "version": "1.0.0",
+  "description": "Projeto para utilizar na prova do Prof. Fausto",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Leonardo Ozelin de Miranda",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-load": "^1.1.16",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.10"
+  }
+}
