@@ -13,6 +13,7 @@ module.exports = function(app){
               res.status(500).json(err);
 
           } else {
+              console.log(data);
               res.send(data);
 
           }
