@@ -4,7 +4,8 @@ var bodyparser = require('body-parser');
 var cors = require('cors');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var passport = require('passport');
+var passport = require('passport'); 
+var passportConfig = require('./passaport')
 
 
 
@@ -18,16 +19,17 @@ module.exports = function() {
   app.use(bodyparser.json());
   app.use(require('method-override')());
   app.use(cors());
-  load('models', {cwd: 'app'}).then('controllers').then('routes').into(app);
-
+  app.use(passport.initialize());
+  app.use(passport.session());
+  passportConfig();
   app.use(cookieParser());
   app.use(session({
     secret: 'Dota e melhor que lol',
     resave: true,
     saveUninitialized: true
   }));
-  app.use(passport.initialize());
-  app.use(passport.session());
-
+  
+  load('models', {cwd: 'app'}).then('controllers').then('routes').into(app);
+  
   return app;
 };
