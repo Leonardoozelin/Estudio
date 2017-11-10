@@ -2,23 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { AgendaComponent } from './../agenda/agenda.component';
 import { ContatoService } from './../contato/contato.service';
 import { ServicosService } from './../servicos/servicos.service';
-import { AgendaService } from './../agenda/agenda.service';
+import { AgendaService, Agenda } from './../agenda/agenda.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
   selector: 'app-nova-agenda',
   templateUrl: './nova-agenda.component.html',
-  styleUrls: ['./nova-agenda.component.css']
+  styleUrls: ['./nova-agenda.component.css'],
+  providers: [AgendaService, ServicosService, ContatoService]
 })
 export class NovaAgendaComponent implements OnInit {
   contatos: any;
   servicos: any;
-  agenda: any = {
-    id: 1,
-    nome: "",
-    horario: "",
-    servico: ""
-  };
+  private model: Agenda = new Agenda();
+
 
   constructor(private contatoService: ContatoService, private servicoService: ServicosService, private agendaService: AgendaService) { }
 
@@ -29,14 +27,13 @@ export class NovaAgendaComponent implements OnInit {
     this.servicoService.listaTodos().subscribe(data=>{
       this.servicos = data;
     })
+    this.model.id = '1';
   }
   onSubmit(){
     
   }
   onAdd(){
-    this.agendaService.envia(this.agenda);
-    console.log(this.agenda.servico + " Foi enviado");
-    
+    this.agendaService.envia(this.model);     
   }
 
 }
