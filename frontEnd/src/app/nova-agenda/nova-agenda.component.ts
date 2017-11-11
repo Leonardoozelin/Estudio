@@ -16,7 +16,7 @@ export class NovaAgendaComponent implements OnInit {
   contatos: any;
   servicos: any;
   private model: Agenda = new Agenda();
-
+  private arrayModel: Array<Agenda> = new Array<Agenda>();
 
   constructor(private contatoService: ContatoService, private servicoService: ServicosService, private agendaService: AgendaService) { }
 
@@ -33,7 +33,27 @@ export class NovaAgendaComponent implements OnInit {
     
   }
   onAdd(){
-    this.agendaService.envia(this.model);     
+    this.arrayModel.push(this.model);
+    this.model = new Agenda();
+    console.log(this.arrayModel);
+    this.resetForm();
   }
+  onSend(){
+    this.agendaService.envia(this.model).subscribe(
+     function(a) {
+       console.log(a);
+     },
+     function(erro){
+       console.log(erro);
+     }
+    );    
+  }
+  resetForm(){
+    this.model.horario = '';
+    this.model.nome = '';
+    this.model.servico = '';
+    this.model.id = '1';
+  }
+
 
 }

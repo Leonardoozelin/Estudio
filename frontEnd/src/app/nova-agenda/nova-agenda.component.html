@@ -9,7 +9,7 @@
         <div class="col-lg-6">
         <div class="row" ng-controller='ContatosController'>
             <label>Cliente</label>
-            <select class="form-control" [(ngModel)]="model.nome">
+            <select class="form-control limpa" [(ngModel)]="model.nome">
               <option value="" selected></option>
               <option *ngFor="let contato of contatos">{{contato.nome}}</option>
             </select>
@@ -20,20 +20,20 @@
       <div class="row">
         <div class="form-group col-lg-3">
           <label>Horario</label>
-          <input class="form-control" id="QuantidadeHoras" [(ngModel)]="model.horario">
+          <input class="form-control limpa" id="QuantidadeHoras" [(ngModel)]="model.horario">
         </div>
       </div>
       <div class="row">
         <div class="form-group">
           <label>Serviços: </label>
-          <select class="form-control" [(ngModel)]="model.servico">
+          <select class="form-control limpa" [(ngModel)]="model.servico">
           <option value="" selected></option>
           <option *ngFor="let agenda of servicos">{{agenda.nome}}</option>
           </select>
         </div>
       </div>
       <div class="form-group col-md-offset-3">
-        <button type="submit" (click)="onAdd()" class="btn btn-outline btn-success btn-lg col-md-12 col-md-offset-4">Salvar</button>
+        <button type="submit" (click)="onAdd()" class="btn btn-outline btn-success btn-lg col-md-12">Salvar</button>
       </div>
     </div>
     <!-- Segunda Coluna __________________________________________ -->
@@ -50,6 +50,11 @@
                 </tr>
               </thead>
               <tbody>
+                <tr *ngFor="let lista of arrayModel">
+                  <td><a href="#">{{lista.nome}}</a></td>
+                  <td>{{lista.horario}}</td>
+                  <td>{{lista.servico}}</td>
+                </tr>
                 <tr>
                   <td><a href="#">{{model.nome}}</a></td>
                   <td>{{model.horario}}</td>
