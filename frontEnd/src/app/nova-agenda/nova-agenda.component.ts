@@ -39,7 +39,7 @@ export class NovaAgendaComponent implements OnInit {
     this.resetForm();
   }
   onSend(){
-    this.agendaService.envia(this.model).subscribe(
+    this.agendaService.envia(this.arrayModel).subscribe(
      function(a) {
        console.log(a);
      },

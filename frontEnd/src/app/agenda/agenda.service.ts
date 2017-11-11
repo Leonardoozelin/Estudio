@@ -18,10 +18,9 @@ export class AgendaService {
   listaTodos(){
     return this.http.get(environment.urlApi + '/agenda');
   }
-  envia(dados: Agenda){
+  envia(dados: Array<Agenda>){
     // console.log(dados);
     return this.http.post('http://localhost:3000/agenda', dados);
-
   }
   
 }

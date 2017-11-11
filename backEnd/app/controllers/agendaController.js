@@ -1,12 +1,16 @@
 module.exports = function(app){
   var controllerAgenda = app.models.agenda;
   controllerAgenda.adiciona = function(req, res) {
-      var corpo = {
-        id: req.body.id,
-        nome:req.body.nome,
-        horario:req.body.horario,
-        servico: req.body.servico
-      }
+      var corpo = new Array();
+
+      req.body.forEach(function(element) {
+          corpo.push({
+            id: element.id,
+            nome:element.nome,
+            horario:element.horario,
+            servico: element.servico
+          });
+      }, this);
 
       controllerAgenda.create(corpo, function(err, data) {
           if (err) {
