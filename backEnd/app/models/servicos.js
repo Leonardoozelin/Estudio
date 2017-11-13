@@ -11,7 +11,7 @@ module.exports =  function () {
        required: true
      },
      valor:{
-       type: String,
+       type: Number,
        required: true
      }
    });

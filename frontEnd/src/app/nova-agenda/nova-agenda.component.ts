@@ -17,6 +17,9 @@ export class NovaAgendaComponent implements OnInit {
   servicos: any;
   private model: Agenda = new Agenda();
   private arrayModel: Array<Agenda> = new Array<Agenda>();
+  private valorTotal = 0.0;
+  private valorUnitario = 0;
+  private filtro: any;
 
   constructor(private contatoService: ContatoService, private servicoService: ServicosService, private agendaService: AgendaService) { }
 
@@ -30,18 +33,19 @@ export class NovaAgendaComponent implements OnInit {
     this.model.id = '1';
   }
   onSubmit(){
-    
+  
   }
   onAdd(){
     this.arrayModel.push(this.model);
+    this.filtro = this.filtraObbj(this.model.servico);
+    this.somaTudo();
     this.model = new Agenda();
-    console.log(this.arrayModel);
     this.resetForm();
   }
   onSend(){
     this.agendaService.envia(this.arrayModel).subscribe(
-     function(a) {
-       console.log(a);
+     function() {
+       
      },
      function(erro){
        console.log(erro);
@@ -53,6 +57,21 @@ export class NovaAgendaComponent implements OnInit {
     this.model.nome = '';
     this.model.servico = '';
     this.model.id = '1';
+  }
+  somaTudo(){
+    
+    this.valorTotal += this.filtro.valor;
+  }
+  filtraObbj(id){
+    var retorno: any;
+
+    this.servicos.forEach(element => {
+      if(element._id == id){
+        retorno = element;
+      }
+    });
+    console.log(retorno.valor);
+    return retorno;
   }
 
 

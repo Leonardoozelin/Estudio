@@ -27,7 +27,18 @@ module.exports = function(app){
           }
       });
     };
-
+    controllerServico.update = function(req, res){
+        controllerServico.findOneAndUpdate({id:req.params.id}, req.body, {upsert: true}, function (err, local){
+            if(err){
+                res.status(500).json(err);
+            }else{
+                res.json('ok');
+            }
+        });
+    };
+    // controllerServico.findOne = function(req, res){
+    //     controllerServico.findByID(req.params.id, function(err, ))
+    // }
 
   return controllerServico;
 
