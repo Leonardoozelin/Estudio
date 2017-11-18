@@ -19,18 +19,20 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Id</th>
                     <th>Cliente</th>
                     <th>Hora Marcada</th>
                     <th>Servico</th>
+                    <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let age of agenda">
-                    <td>{{age.id}}</td>
                     <td><a href="#">{{age.nome}}</a></td>
                     <td>{{age.horario}}</td>
                     <td>{{age.servico}}</td>
+                    <td> <button type="button" (click)="excluir(age._id);" class="btn btn-outline btn-danger btn-lg btn-block">Excluir</button> </td>
+                    <td> <button type="button" (click)="excluir(age._id);" class="btn btn-outline btn-warning btn-lg btn-block">Editar</button> </td>
                   </tr>
                 </tbody>
               </table>

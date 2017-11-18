@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Router, RouterModule, Routes} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 //import component 
@@ -13,25 +13,27 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { NovaAgendaComponent } from './nova-agenda/nova-agenda.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { ServicosComponent } from './servicos/servicos.component';
+import { EditaAgendaComponent } from './edita-agenda/edita-agenda.component';
 
 //simport services
 import { AgendaService } from './agenda/agenda.service';
-import { ContatoService }  from './contato/contato.service';
+import { ContatoService } from './contato/contato.service';
 import { ProdutosService } from './produtos/produtos.service';
 import { ServicosService } from './servicos/servicos.service';
 
 
+
 //Rotas
 const appRoutes: Routes = [
-   {path: '', redirectTo: "/home", pathMatch: "full"},
-   {path: 'home', component: HomeComponent},
-   {path: 'contato', component: ContatoComponent},
-   {path: 'cadastraContato', component: CadastraClienteComponent},
-   {path: 'agenda', component: AgendaComponent},
-   {path: 'novaAgenda', component: NovaAgendaComponent},
-   {path: 'produtos', component: ProdutosComponent},
-   {path: 'servicos', component: ServicosComponent},
-
+  { path: '', redirectTo: "/home", pathMatch: "full" },
+  { path: 'home', component: HomeComponent },
+  { path: 'contato', component: ContatoComponent },
+  { path: 'cadastraContato', component: CadastraClienteComponent },
+  { path: 'agenda', component: AgendaComponent },
+  { path: 'novaAgenda', component: NovaAgendaComponent },
+  { path: 'produtos', component: ProdutosComponent },
+  { path: 'servicos', component: ServicosComponent },
+  { path: 'editaAgenda/:id', component: EditaAgendaComponent }
 ];
 
 @NgModule({
@@ -43,13 +45,14 @@ const appRoutes: Routes = [
     AgendaComponent,
     NovaAgendaComponent,
     ProdutosComponent,
-    ServicosComponent
+    ServicosComponent,
+    EditaAgendaComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-    appRoutes
-  ),
+      appRoutes
+    ),
     HttpClientModule,
     FormsModule
   ],

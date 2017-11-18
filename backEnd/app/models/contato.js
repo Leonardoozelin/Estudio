@@ -10,9 +10,20 @@ module.exports =  function () {
        type: String,
        required: true
      },
+     cpf:{
+      type: String
+     },
      telefone:{
        type: String,
        required: true
+     },
+     cidade:{
+       type: String,
+       require: true
+     },
+     endereco:{
+       type: String,
+       require: true
      },
      email:{
        type: String,

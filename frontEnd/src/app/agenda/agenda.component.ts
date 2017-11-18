@@ -13,6 +13,13 @@ export class AgendaComponent implements OnInit {
   constructor(private agendaService: AgendaService) { }
 
   ngOnInit() {
+    this.listar();
+  }
+
+  excluir(id){
+    this.agendaService.excluirAgenda(id).subscribe(data => this.listar());
+  }
+  listar(){
     this.agendaService.listaTodos().subscribe(data=>{
       this.agenda = data;
     })
