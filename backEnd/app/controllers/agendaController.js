@@ -32,17 +32,8 @@ module.exports = function (app) {
             }
         });
     };
-    controllerAgenda.findOne = function (req, res) {
-        controllerAgenda.findById(req.params.id, function (error, data) {
-            if (error) {
-                console.log(error);
-                return;
-            } else {
-                res.json(data);
-            }
-        });
-    };
     controllerAgenda.updateOne = function (req, res) {
+        var id = req.body._id;
         controllerAgenda.findByIdAndUpdate(id, req.body).then(
             function (data) {
                 res.status(200).json(data);
@@ -63,6 +54,20 @@ module.exports = function (app) {
                 console.log(error);
             }
         )
+    };
+    controllerAgenda.find_one = function (req, res) {
+        
+        controllerAgenda.findById(req.params.id, function (err, local) {
+            if(err){
+                console.log("Deu erro");
+                res.status(500).json(err);
+            }else{
+                if(!local){
+                    res.json('empty');
+                }
+                res.json(local);
+            };
+        });
     };
     return controllerAgenda;
     //app.delete('/contatos:id', controller.removeContato);

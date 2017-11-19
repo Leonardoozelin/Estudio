@@ -44,7 +44,6 @@ export class EditaAgendaComponent implements OnInit {
     this.model.horario = data.horario;
     this.model.nome = data.nome;
     this.model.servico = data.servico;
-    console.log(data);
   }
   onSend() {
     this.agendaService.envia(this.arrayModel).subscribe(
@@ -54,9 +53,9 @@ export class EditaAgendaComponent implements OnInit {
       function (erro) {
         console.log(erro);
       }
-    );
+    ); 
   }
-  filtraObbj(id) {
+   filtraObbj(id) {
     var retorno: any;
 
     this.servicos.forEach(element => {

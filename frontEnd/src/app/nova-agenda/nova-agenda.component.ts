@@ -24,55 +24,61 @@ export class NovaAgendaComponent implements OnInit {
   constructor(private contatoService: ContatoService, private servicoService: ServicosService, private agendaService: AgendaService) { }
 
   ngOnInit() {
-    this.contatoService.listaTodos().subscribe(data=>{
+    this.contatoService.listaTodos().subscribe(data => {
       this.contatos = data;
     }),
-    this.servicoService.listaTodos().subscribe(data=>{
-      this.servicos = data;
-    })
+      this.servicoService.listaTodos().subscribe(data => {
+        this.servicos = data;
+      })
     this.model.id = '1';
   }
-  onSubmit(){
-  
+  onSubmit() {
+
   }
-  onAdd(){
+  onAdd() {
     this.arrayModel.push(this.model);
     this.filtro = this.filtraObbj(this.model.servico);
     this.somaTudo();
     this.model = new Agenda();
     this.resetForm();
   }
-  onSend(){
+  onSend() {
     this.agendaService.envia(this.arrayModel).subscribe(
-     function() {
-       
-     },
-     function(erro){
-       console.log(erro);
-     }
-    );    
+      function () {
+
+      },
+      function (erro) {
+        console.log(erro);
+      }
+    );
+    this.resetTudo();
   }
-  resetForm(){
+  resetForm() {
     this.model.horario = '';
     this.model.nome = '';
     this.model.servico = '';
     this.model.id = '1';
   }
-  somaTudo(){
-    
+  resetTudo(){
+    this.model.horario = '';
+    this.model.nome = '';
+    this.model.servico = '';
+    this.model.id = '1';
+    this.valorTotal = 0;
+    this.arrayModel = new Array<Agenda>();
+  }
+  somaTudo() {
+
     this.valorTotal += this.filtro.valor;
   }
-  filtraObbj(id){
+  filtraObbj(id) {
     var retorno: any;
 
     this.servicos.forEach(element => {
-      if(element._id == id){
+      if (element._id == id) {
         retorno = element;
       }
-    });
-    console.log(retorno.valor);
+    })
     return retorno;
   }
-
-
 }
