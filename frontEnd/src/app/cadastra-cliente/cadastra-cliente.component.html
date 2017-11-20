@@ -10,26 +10,26 @@
         <div class="row">
           <div class="form-group col-md-5">
             <label>Nome do Cliente</label>
-            <input class="form-control" placeholder="Digite o nome do cliente">
-          </div>
+            <input class="form-control" [(ngModel)]="model.nome" placeholder="Digite o nome do cliente">
+          </div> 
           <div class="form-group col-md-3">
             <label>CPF</label>
-            <input class="form-control" placeholder="Digite o CPF do cliente">
+            <input class="form-control" [(ngModel)]="model.cpf" placeholder="Digite o CPF do cliente">
           </div>
           <div class="form-group col-md-3">
             <label>Email</label>
-            <input class="form-control" placeholder="Digite o Email do cliente">
+            <input class="form-control" [(ngModel)]="model.email" placeholder="Digite o Email do cliente">
           </div>
           <div class="form-group col-md-5">
             <label>Endereco</label>
-            <input class="form-control" placeholder="Digite a Rua e o Numero do cliente">
+            <input class="form-control" [(ngModel)]="model.endereco" placeholder="Digite a Rua e o Numero do cliente">
           </div>
           <div class="form-group col-md-3">
             <label>Cidade</label>
-            <input class="form-control" placeholder="Digite a Cidade do Cliente" >
+            <input class="form-control" [(ngModel)]="model.cidade" placeholder="Digite a Cidade do Cliente" >
           </div>
         </div>
-        <button type="button" class="btn btn-outline btn-success btn-lg col-md-offset-9">Salvar</button>
+        <button type="button" (click)="onAdd();" class="btn btn-outline btn-success btn-lg col-md-offset-9">Salvar</button>
         <button type="button" class="btn btn-outline btn-danger btn-lg">Cancelar</button>
     </div>
 </div>

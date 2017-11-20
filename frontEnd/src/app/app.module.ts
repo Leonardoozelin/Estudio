@@ -14,12 +14,14 @@ import { NovaAgendaComponent } from './nova-agenda/nova-agenda.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { ServicosComponent } from './servicos/servicos.component';
 import { EditaAgendaComponent } from './edita-agenda/edita-agenda.component';
+import { EditaClienteComponent } from './edita-cliente/edita-cliente.component';
 
 //simport services
 import { AgendaService } from './agenda/agenda.service';
 import { ContatoService } from './contato/contato.service';
 import { ProdutosService } from './produtos/produtos.service';
 import { ServicosService } from './servicos/servicos.service';
+
 
 
 
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
   { path: 'novaAgenda', component: NovaAgendaComponent },
   { path: 'produtos', component: ProdutosComponent },
   { path: 'servicos', component: ServicosComponent },
-  { path: 'editaAgenda/:id', component: EditaAgendaComponent }
+  { path: 'editaAgenda/:id', component: EditaAgendaComponent },
+  { path: 'editaContato/:id', component: EditaClienteComponent }
 ];
 
 @NgModule({
@@ -46,7 +49,8 @@ const appRoutes: Routes = [
     NovaAgendaComponent,
     ProdutosComponent,
     ServicosComponent,
-    EditaAgendaComponent
+    EditaAgendaComponent,
+    EditaClienteComponent
   ],
   imports: [
     BrowserModule,

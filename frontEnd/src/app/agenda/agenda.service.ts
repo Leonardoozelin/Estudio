@@ -21,7 +21,6 @@ export class AgendaService {
     return this.http.get(environment.urlApi + '/agenda');
   }
   envia(dados: Array<Agenda>){
-    // console.log(dados);
     return this.http.post('http://localhost:3000/agenda', dados);
   }
   excluirAgenda(id){
@@ -29,5 +28,8 @@ export class AgendaService {
   }
   getAgenda(id){
     return this.http.get('http://localhost:3000/agenda/' + id);
+  }
+  atualizaAgenda(dados){
+    return this.http.post('http://localhost:3000/editaAgenda', dados);
   }
 }

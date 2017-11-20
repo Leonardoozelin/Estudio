@@ -46,16 +46,16 @@ export class EditaAgendaComponent implements OnInit {
     this.model.servico = data.servico;
   }
   onSend() {
-    this.agendaService.envia(this.arrayModel).subscribe(
+    this.agendaService.atualizaAgenda(this.model).subscribe(
       function () {
-
+        alert("Enviado com Sucesso");
       },
       function (erro) {
         console.log(erro);
       }
-    ); 
+    );
   }
-   filtraObbj(id) {
+  filtraObbj(id) {
     var retorno: any;
 
     this.servicos.forEach(element => {
@@ -63,12 +63,7 @@ export class EditaAgendaComponent implements OnInit {
         retorno = element;
       }
     });
-    console.log(retorno.valor);
     return retorno;
-  }
-  mostraDados() {
 
   }
 }
-
-

@@ -11,23 +11,20 @@ module.exports =  function () {
        required: true
      },
      cpf:{
-      type: String
+      type: String,
+      required: true
      },
-     telefone:{
-       type: String,
-       required: true
-     },
+     email:{
+      type: String,
+      required: true
+    },
+    endereco:{
+      type: String,
+      require: true
+    },
      cidade:{
        type: String,
        require: true
-     },
-     endereco:{
-       type: String,
-       require: true
-     },
-     email:{
-       type: String,
-       required: true
      }
    });
    return mongoose.model('contato', schema);

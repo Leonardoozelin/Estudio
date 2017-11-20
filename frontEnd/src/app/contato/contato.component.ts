@@ -13,6 +13,12 @@ export class ContatoComponent implements OnInit {
   constructor(private contatoService: ContatoService) { }
 
   ngOnInit() {
+    this.listar();
+  }
+  excluir(id){
+    this.contatoService.remove(id).subscribe(data => this.listar());
+  }
+  listar(){
     this.contatoService.listaTodos().subscribe(data=>{
       this.contato = data;
     })
