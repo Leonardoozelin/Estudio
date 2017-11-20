@@ -36,7 +36,7 @@ module.exports = function(app){
             res.json(local);
         };
     });
-  }
+  };
   controllerContato.removeContato = function (req, res){
     var id = req.params.id;
     controllerContato.remove({ _id: id }).exec().then(
@@ -47,7 +47,19 @@ module.exports = function(app){
             console.log(error);
         }
     )
-  }
+  };
+  controllerContato.updateContato = function(req, res){
+    var id = req.body._id;
+    controllerContato.findByIdAndUpdate(id, req.body).then(
+        function (data) {
+          res.status(200).json(data);
+        },
+        function (error) {
+          console.log(error);
+          res.status(404).json('Cliente não encontrado para atualizar');
+        }
+      );
+  };
 
   return controllerContato;
   //app.delete('/contatos:id', controller.removeContato);
