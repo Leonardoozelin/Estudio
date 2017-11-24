@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
-export class Servico{
+export class novoServicos{
 	public _id: String;
 	public id: String;
 	public nome: String;
