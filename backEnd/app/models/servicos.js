@@ -10,6 +10,9 @@ module.exports =  function () {
        type: String,
        required: true
      },
+     descricao:{
+        type: String
+     },
      valor:{
        type: Number,
        required: true

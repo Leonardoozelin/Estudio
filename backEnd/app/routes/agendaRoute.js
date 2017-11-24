@@ -3,6 +3,6 @@ module.exports = function(app){
   app.get('/agenda', controllerAgenda.find_all);
   app.get('/agenda/:id', controllerAgenda.find_one);
   app.post('/agenda', controllerAgenda.adiciona);
-  app.post('/editaAgenda', controllerAgenda.updateOne);// Put nao funcina vai com o Post Mesmo...
+  app.post('/editaAgenda', controllerAgenda.updateOne); // Put nao funcina vai com o Post Mesmo...
   app.delete('/agenda/:id', controllerAgenda.apaga);
 };

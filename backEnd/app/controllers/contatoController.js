@@ -2,9 +2,7 @@ module.exports = function(app){
   var controllerContato = app.models.contato;
 
   controllerContato.adicona = function(req, res) {
-      console.log(req.body);
-        corpo = req.body;
-      //cria um objeto novo na collection
+       corpo = req.body;
       controllerContato.create(corpo, function(err, data) {
           if (err) {
               res.status(500).json(err);
@@ -62,5 +60,4 @@ module.exports = function(app){
   };
 
   return controllerContato;
-  //app.delete('/contatos:id', controller.removeContato);
 };

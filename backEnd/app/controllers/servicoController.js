@@ -3,12 +3,7 @@ module.exports = function(app){
 
   controllerServico.adicona = function(req, res) {
       console.log(req.body);
-      var corpo = {
-        id: req.body.id,
-      	nome:req.body.nome,
-      	valor:req.body.valor,
-
-      }
+      var corpo = req.body;
       controllerServico.create(corpo, function(err, data) {
           if (err) {
               res.status(500).json(err);
@@ -28,17 +23,29 @@ module.exports = function(app){
       });
     };
     controllerServico.update = function(req, res){
-        controllerServico.findOneAndUpdate({id:req.params.id}, req.body, {upsert: true}, function (err, local){
-            if(err){
-                res.status(500).json(err);
-            }else{
-                res.json('ok');
-            }
-        });
+       var id = req.body._id;
+      controllerServico.findByIdAndUpdate(id, req.body).then(
+        function (data) {
+          res.status(200).json(data);
+        },
+        function (error) {
+          console.log(error);
+          res.status(404).json('Servico não encontrado para atualizar');
+        }
+      );
     };
-    // controllerServico.findOne = function(req, res){
-    //     controllerServico.findByID(req.params.id, function(err, ))
-    // }
+    controllerServico.delete = function (req, res) {
+      var id = req.params.id;
+      controllerServico.remove({ _id: id }).exec().then(
+          function () {
+              res.status(204).end();
+          },
+          function (error) {
+              console.log(error);
+          }
+      )
+    }
+
 
   return controllerServico;
 

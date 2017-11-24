@@ -29,8 +29,8 @@ export class ContatoService {
   filtra(id){
     return this.http.get('http://localhost:3000/contatos/' + id);
   }
-  atualizaDados(){
-    
+  atualizaDados(dados){
+   return this.http.post('http://localhost:3000/contatosEditar', dados);
   }
 
 }

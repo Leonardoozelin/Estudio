@@ -24,12 +24,24 @@ export class EditaClienteComponent implements OnInit {
     this.contatoService.filtra(id).subscribe(data => this.listaDados(data));
   }
   listaDados(data){
+    this.model._id = data._id;
+    this.model.id = data.id;
     this.model.nome = data.nome;
     this.model.cidade = data.cidade;
     this.model.email = data.email;
     this.model.telefone = data.telefone;
     this.model.endereco = data.endereco;
     this.model.cpf = data.cpf;
+    }
+    atualiza(){
+      this.contatoService.atualizaDados(this.model).subscribe(
+        function () {
+          alert("Atualizado Com Sucesso");
+        },
+        function (error){
+          console.log(error);
+        }
+      );
     }
 
 }

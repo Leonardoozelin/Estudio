@@ -3,5 +3,7 @@ module.exports = function(app) {
   app.get('/servicos', controllerServico.find_all);
   app.post('/servicos', controllerServico.adicona);
   app.put('/servicos/:id', controllerServico.update);
+  app.delete('/servicos/:id', controllerServico.delete);
+  app.post('/editaServico', controllerServico.update);
   return app;
 };

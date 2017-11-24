@@ -11,16 +11,16 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Id</th>
                     <th>Nome</th>
+                    <th>Descrição</th>
                     <th>Valor</th>
                     <!-- <th>E-mail</th> -->
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let ser of servicos">
-                    <td>{{ser.id}}</td>
-                    <td><a href="#">{{ser.nome}}</a></td>
+                    <td><a>{{ser.nome}}</a></td>
+                    <td>{{ser.descricao}}</td>
                     <td>R$ {{ser.valor}}</td>
                     <!-- <td>{{cli.email}}</td> -->
                   </tr>

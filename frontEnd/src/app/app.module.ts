@@ -21,6 +21,7 @@ import { AgendaService } from './agenda/agenda.service';
 import { ContatoService } from './contato/contato.service';
 import { ProdutosService } from './produtos/produtos.service';
 import { ServicosService } from './servicos/servicos.service';
+import { NovoServicoComponent } from './novo-servico/novo-servico.component';
 
 
 
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     ProdutosComponent,
     ServicosComponent,
     EditaAgendaComponent,
-    EditaClienteComponent
+    EditaClienteComponent,
+    NovoServicoComponent
   ],
   imports: [
     BrowserModule,
