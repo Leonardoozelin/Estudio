@@ -2,7 +2,6 @@ module.exports = function (app) {
     var controllerServico = app.models.servicos;
 
     controllerServico.adicona = function (req, res) {
-        console.log(req.body);
         var corpo = req.body;
         controllerServico.create(corpo, function (err, data) {
             if (err) {

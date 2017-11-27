@@ -11,9 +11,16 @@ export class ProdutosComponent implements OnInit {
   constructor(private produtosService: ProdutosService) { }
 
   ngOnInit() {
+    this.listar();
+  }
+  listar(){
     this.produtosService.listaTodos().subscribe(data=>{
       this.produtos = data;
-    })
+    });
+  }
+  excluir(id){
+    console.log(id);
+    this.produtosService.deleta(id).subscribe(data => this.listar());
   }
 
 }

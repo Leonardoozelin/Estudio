@@ -1,3 +1,32 @@
-<p>
-  novo-produto works!
-</p>
+<div id="page-wrapper">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <h1 class="page-header">Cadastro de Produtos</h1>
+          </div>
+      </div>
+        <!-- tudo para baixo vai aparecer na pagina -->
+      <div class="row">
+        <div class="row">
+        <div class="form-group col-md-5">
+          <label>Nome do Produto</label>
+          <input class="form-control" [(ngModel)]="model.nome" placeholder="Digite o nome do Produto">
+        </div> 
+    </div>
+        <div class="row">
+        <div class="form-group col-md-5">
+          <label>Descrição</label>
+          <input class="form-control" [(ngModel)]="model.descricao" placeholder="Digite a Descrição do Produto">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <label>Valor</label>
+          <input class="form-control" [(ngModel)]="model.valor" placeholder="Digite o Valor do Produto">
+        </div>
+    </div>
+      </div>
+      <button type="button" (click)="onAdd();" class="btn btn-outline btn-success btn-lg col-md-offset-9">Salvar</button>
+      <button type="button" class="btn btn-outline btn-danger btn-lg">Cancelar</button>
+  </div>
+</div>

@@ -11,18 +11,24 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Id</th>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>Valor</th>
+                    <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let prod of produtos">
-                    <td>{{prod.id}}</td>
                     <td><a href="#">{{prod.nome}}</a></td>
                     <td>{{prod.descricao}}</td>
                     <td>R$ {{prod.valor}}</td>
+                    <td>
+                      <button type="button" (click)="excluir(prod._id);" class="btn btn-outline btn-danger btn-block">Excluir</button>
+                    </td>
+                    <td>
+                      <button type="button" [routerLink]="['/editaProduto', prod._id]" class="btn btn-outline btn-warning btn-block">Editar</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
