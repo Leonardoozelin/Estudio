@@ -13,6 +13,12 @@ export class ServicosComponent implements OnInit {
   constructor(private servicosService: ServicosService) { }
 
   ngOnInit() {
+    this.listar();
+  }
+  excluir(id){
+    this.servicosService.deleta(id).subscribe(data => this.listar());
+  }
+  listar(){
     this.servicosService.listaTodos().subscribe(data=>{
       this.servicos = data;
     })

@@ -56,13 +56,13 @@ module.exports = function (app) {
         )
     };
     controllerAgenda.find_one = function (req, res) {
-        
+
         controllerAgenda.findById(req.params.id, function (err, local) {
-            if(err){
+            if (err) {
                 console.log("Deu erro");
                 res.status(500).json(err);
-            }else{
-                if(!local){
+            } else {
+                if (!local) {
                     res.json('empty');
                 }
                 res.json(local);
