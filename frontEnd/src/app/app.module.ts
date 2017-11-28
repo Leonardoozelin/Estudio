@@ -16,8 +16,6 @@ import { ServicosComponent } from './servicos/servicos.component';
 import { EditaAgendaComponent } from './edita-agenda/edita-agenda.component';
 import { EditaClienteComponent } from './edita-cliente/edita-cliente.component';
 import { NovoServicoComponent } from './novo-servico/novo-servico.component';
-
-
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
 import { EditaProdutosComponent } from './edita-produtos/edita-produtos.component';
 import { NovoProdutoComponent } from './novo-produto/novo-produto.component';
@@ -30,13 +28,16 @@ import { AgendaService } from './agenda/agenda.service';
 import { ContatoService } from './contato/contato.service';
 import { ProdutosService } from './produtos/produtos.service';
 import { ServicosService } from './servicos/servicos.service';
+import { VendasService } from './vendas/vendas.service';
+
+
 
 //Rotas
 const appRoutes: Routes = [
   { path: '', redirectTo: "/home", pathMatch: "full" },
   { path: 'home', component: HomeComponent },
   //Listagem
-  { path: 'contato', component: ContatoComponent },  
+  { path: 'contato', component: ContatoComponent },
   { path: 'agenda', component: AgendaComponent },
   { path: 'produtos', component: ProdutosComponent },
   { path: 'servicos', component: ServicosComponent },
@@ -52,7 +53,7 @@ const appRoutes: Routes = [
   { path: 'novaAgenda', component: NovaAgendaComponent },
   { path: 'novoservico', component: NovoServicoComponent },
   { path: 'novoProduto', component: NovoProdutoComponent },
-  { path: 'novaVenda', component: NovaVendaComponent }  
+  { path: 'novaVenda', component: NovaVendaComponent }
 ];
 
 @NgModule({
@@ -83,7 +84,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [AgendaService, ContatoService, ProdutosService, ServicosService],
+  providers: [AgendaService, ContatoService, ProdutosService, ServicosService, VendasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

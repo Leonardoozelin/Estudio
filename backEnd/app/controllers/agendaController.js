@@ -1,4 +1,4 @@
-module.exports = function (app) {
+module.exports = function (app) {   
     var controllerAgenda = app.models.agenda;
     controllerAgenda.adiciona = function (req, res) {
         var corpo = new Array();
@@ -15,11 +15,9 @@ module.exports = function (app) {
         controllerAgenda.create(corpo, function (err, data) {
             if (err) {
                 res.status(500).json(err);
-
             } else {
                 console.log(data);
                 res.send(data);
-
             }
         });
     };
