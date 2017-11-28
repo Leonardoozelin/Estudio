@@ -11,5 +11,8 @@ export class EditaVendaComponent implements OnInit {
 
   ngOnInit() {
   }
+  onclica(){
+    
+  }
 
 }
