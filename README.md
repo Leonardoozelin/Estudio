@@ -3,37 +3,47 @@
 - ProgramacãoWEB
 - Professor Fausto
 
-### Escopo
+### ESCOPO
 > Este documento apresenta a modelagem do Sistema de Gerenciamento do 
 Salão  de  Cabelereiro  utilizando  como  referência  o  livro  UML  na 
 Prática  –  Do  Problema  ao  Sistema.  O  público  alvo  deste  documento 
 inclui pessoas envolvidas com o desenvolvimento Aluno que desenvolveu e o 
 professor responsavel 
  
-### Benefícios Esperados 
+### BENEFÍCIOS ESPERADOS 
  - __Facilitar o gerenciamento de um Salão de Cabelo.__
  
-### Ferramentas Utilizadas
+### REQUISITOS PARA FUNCIONAMENTO
+- NODE.JS V. 8.9 OU SIPERIOR
+- ANGULAR 4
+- MONGODB V. 3.4 OU SUPERIOR
+
+### FERRAMENTAS UTILIZADAS
 - __NODE.JS__
 - __ANGULAR 4__
 - __BANCO DE DADOS MONGODB__
 - __VISUAL STUDO CODE__
 
 ### INSTALACAO
+#### NODE
 ```
-sudo service mongod start
+- sudo service mongod start
 
-cd Documentos\prjetos
+- cd Documentos\prjetos
 
-git clone https://github.com/Leonardoozelin/Estudio.git
+- git clone https://github.com/Leonardoozelin/Estudio.git
 
-cd frontEnd 
+- cd frontEnd 
 
-npm install 
+- npm install 
 
-node server.js
+- node server.js
 ```
+#### ANGULAR
 ```
-cd ../backEnd/frontEnd | ng build
-ng serve
+- cd ../backEnd/frontEnd 
+
+- npm install
+
+- ng serve
 ```
