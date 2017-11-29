@@ -3,7 +3,7 @@ import { AgendaComponent } from './../agenda/agenda.component';
 import { ContatoService } from './../contato/contato.service';
 import { ServicosService } from './../servicos/servicos.service';
 import { AgendaService, Agenda } from './../agenda/agenda.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router'; 
 
 
 @Component({
@@ -32,9 +32,6 @@ export class NovaAgendaComponent implements OnInit {
       })
     this.model.id = '1';
   }
-  onSubmit() {
-
-  }
   onAdd() {
     this.arrayModel.push(this.model);
     this.filtro = this.filtraObbj(this.model.servico);
@@ -45,7 +42,7 @@ export class NovaAgendaComponent implements OnInit {
   onSend() {
     this.agendaService.envia(this.arrayModel).subscribe(
       function () {
-
+        alert("Cadastrado Com Sucesso");
       },
       function (erro) {
         console.log(erro);

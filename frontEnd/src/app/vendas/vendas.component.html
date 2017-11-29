@@ -1,3 +1,41 @@
-<p>
-  vendas works!
-</p>
+<div id="page-wrapper">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Vendas</h1>
+      </div>
+    </div>
+    <!-- tudo para baixo vai aparecer na pagina -->
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Produto</th>
+              <th>Valor</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vend of venda">
+              <td>
+                <a>{{vend.cliente}}</a>
+              </td>
+              <td>{{filtraObj(vend.produto)}}</td>
+              <td>{{vend.valor}}</td>
+              <td>
+                <button type="button" (click)="excluir(vend._id);" class="btn btn-outline btn-danger btn-block">Excluir</button>
+              </td>
+              <td>
+                <button type="button" [routerLink]="['/editaVendas', vend._id]" class="btn btn-outline btn-warning btn-block">Editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

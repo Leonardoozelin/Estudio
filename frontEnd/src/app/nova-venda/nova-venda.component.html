@@ -8,9 +8,9 @@
     <div class="col-lg-6">
       <div class="row" ng-controller='ContatosController'>
         <label>Cliente</label>
-        <select class="form-control limpa" [(ngModel)]="model.nome">
+        <select class="form-control limpa" [(ngModel)]="model.cliente">
           <option value="" selected></option>
-          <option *ngFor="let contato of contatos">{{contato.nome}}</option>
+          <option *ngFor="let contatos of contato">{{contatos.nome}}</option>
         </select>
       </div>
       <br>
@@ -18,9 +18,9 @@
       <div class="row">
         <div class="form-group">
           <label>Produtos: </label>
-          <select class="form-control limpa" [(ngModel)]="model.servico">
+          <select class="form-control limpa" [(ngModel)]="model.produto">
             <option value="" selected></option>
-            <option *ngFor="let agenda of servicos" value="{{agenda._id}}">{{agenda.nome}}</option>
+            <option *ngFor="let venda of produto" value="{{venda._id}}">{{venda.nome}}</option>
           </select>
         </div>
       </div>
@@ -40,24 +40,24 @@
             <thead>
               <tr>
                 <th>Cliente</th>
-                <th>Hora Marcada</th>
-                <th>Servico</th>
+                <th>Produto</th>
+                <th>Valor</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let lista of arrayModel">
                 <td>
-                  <a href="#">{{lista.nome}}</a>
+                  <a>{{lista.cliente}}</a>
                 </td>
-                <td>{{lista.horario}}</td>
-                <td>{{filtraObbj(lista.servico).nome}}</td>
+                <td>{{filtraObbj(lista.produto).nome}}</td>
+                <td>{{lista.valor}}</td>
               </tr>
               <tr>
                 <td>
-                  <a href="#">{{model.nome}}</a>
+                  <a>{{model.cliente}}</a>
                 </td>
-                <td>{{model.horario}}</td>
                 <td>{{model.produto}}</td>
+                <td>{{model.valor}}</td>
               </tr>
             </tbody>
           </table>

@@ -45,17 +45,4 @@ export class AgendaComponent implements OnInit {
     return retorno;
 
   }
-  // mostraDados(data){
-  //   this.model._id = data._id;
-  //   this.model.id = data.id;
-  //   this.model.horario = data.horario;
-  //   this.model.nome = data.nome;
-  //   this.model.servico = data.servico;
-  //   // console.log(this.model);
-  //   // this.model.forEach(element => {
-  //   //   this.arrayAgenda.push(element);     
-  //   // });
-
-  // }
-
 } 

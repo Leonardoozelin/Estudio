@@ -14,11 +14,7 @@ export class EditaAgendaComponent implements OnInit {
   contatos: any;
   servicos: any;
   private model: Agenda = new Agenda();
-  private arrayModel: Array<Agenda> = new Array<Agenda>();
-  private valorTotal = 0.0;
-  private valorUnitario = 0;
-  private filtro: any;
-
+  
   constructor(private contatoService: ContatoService, private servicoService: ServicosService, private agendaService: AgendaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -54,16 +50,5 @@ export class EditaAgendaComponent implements OnInit {
         console.log(erro);
       }
     );
-  }
-  filtraObbj(id) {
-    var retorno: any;
-
-    this.servicos.forEach(element => {
-      if (element._id == id) {
-        retorno = element;
-      }
-    });
-    return retorno;
-
   }
 }

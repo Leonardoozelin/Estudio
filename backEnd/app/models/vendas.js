@@ -6,7 +6,7 @@ module.exports = function (){
             type: String,
             require: true
         },
-        protudo:{
+        produto:{
             type: String,
             require: true
         },

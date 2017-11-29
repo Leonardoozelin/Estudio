@@ -25,9 +25,9 @@
               </td>
               <td>{{cli.cpf}}</td>
               <td>{{cli.email}}</td>
-              <td><button type="button" (click)="excluir(cli._id);" class="btn btn-outline btn-danger btn-lg btn-block">Excluir</button></td>
+              <td><button type="button" (click)="excluir(cli._id);" class="btn btn-outline btn-danger btn-block">Excluir</button></td>
               <td>
-                <button type="button" [routerLink]="['/editaContato', cli._id]" class="btn btn-outline btn-warning btn-lg btn-block">Editar</button>
+                <button type="button" [routerLink]="['/editaContato', cli._id]" class="btn btn-outline btn-warning btn-block">Editar</button>
               </td>
             </tr>
           </tbody>

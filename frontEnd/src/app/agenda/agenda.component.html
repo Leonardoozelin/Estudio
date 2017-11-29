@@ -22,15 +22,15 @@
           <tbody>
             <tr *ngFor="let age of agenda">
               <td>
-                <a href="#">{{age.nome}}</a>
+                <a>{{age.nome}}</a>
               </td>
               <td>{{age.horario}}</td>
               <td>{{filtraObj(age.servico)}}</td>
               <td>
-                <button type="button" (click)="excluir(age._id);" class="btn btn-outline btn-danger btn-lg btn-block">Excluir</button>
+                <button type="button" (click)="excluir(age._id);" class="btn btn-outline btn-danger btn-block">Excluir</button>
               </td>
               <td>
-                <button type="button" [routerLink]="['/editaAgenda', age._id]" class="btn btn-outline btn-warning btn-lg btn-block">Editar</button>
+                <button type="button" [routerLink]="['/editaAgenda', age._id]" class="btn btn-outline btn-warning btn-block">Editar</button>
               </td>
             </tr>
           </tbody>
